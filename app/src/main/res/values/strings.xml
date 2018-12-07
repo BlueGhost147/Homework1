@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">HomeExercise1</string>
+    <string name="button_attack">Attack</string>
+    <string name="button_heal">Heal</string>
+</resources>
