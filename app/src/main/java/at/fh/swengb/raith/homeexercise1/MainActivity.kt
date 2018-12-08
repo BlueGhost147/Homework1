@@ -27,8 +27,8 @@ class MainActivity : AppCompatActivity() {
         enemies.add(createEnemy(EnemyType.Dragon))
         enemies.add(createEnemy(EnemyType.Bear))
 
-        // Add some random enemeies
-        for (i in 1..5) enemies.add(generateRandomEnemy())
+        // Add some random enemies
+        for (i in 0..7) enemies.add(generateRandomEnemy())
 
         updatePlayerInformation()
         updateEnemyInformation()

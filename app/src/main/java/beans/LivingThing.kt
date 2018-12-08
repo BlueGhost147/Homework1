@@ -4,9 +4,8 @@ import android.util.Log
 
 open class LivingThing(val name : String,
                   var health : Int,
-                  val attackStrenght : Int,
+                  open val attackStrenght : Int,
                   var isAlive : Boolean = true) {
-
 
     open fun attack(target: LivingThing) {
 

@@ -5,6 +5,11 @@ class Player(
         var level : Int, var experience : Int, var healingPotions : Int
 ) : LivingThing(name, health, attackStrenght, isAlive) {
 
+    override val attackStrenght : Int = attackStrenght
+        get() {
+            return field * level
+        }
+
     override fun attack(target: LivingThing) {
         if(target.isAlive) {
             super.attack(target)
