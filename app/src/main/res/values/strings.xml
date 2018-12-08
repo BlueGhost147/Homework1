@@ -2,4 +2,10 @@
     <string name="app_name">HomeExercise1</string>
     <string name="button_attack">Attack</string>
     <string name="button_heal">Heal</string>
+    <string name="textview_default_playername">Playername</string>
+    <string name="textview_default_level">1</string>
+    <string name="textview_default_health">0</string>
+    <string name="textview_default_enemy">Enemy</string>
+    <string name="textview_health">Health:</string>
+    <string name="textview_level">Level:</string>
 </resources>

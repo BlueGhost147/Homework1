@@ -7,6 +7,7 @@ open class LivingThing(val name : String,
                   val attackStrenght : Int,
                   var isAlive : Boolean = true) {
 
+
     open fun attack(target: LivingThing) {
 
         if (this.isAlive) {
@@ -23,7 +24,7 @@ open class LivingThing(val name : String,
     }
 
     open fun takeDamageFrom(attacker: LivingThing, damage: Int) {
-        Log.i("GameLog", "${name} is taking ${damage} damage from: ${attacker.name}")
+        Log.i("GameLog", "${name} is taking $damage damage from: ${attacker.name}")
         this.health = this.health - damage
         if (this.health <= 0) {
             this.isAlive = false
@@ -31,4 +32,6 @@ open class LivingThing(val name : String,
         }
 
     }
+
+
 }

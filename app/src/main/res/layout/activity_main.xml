@@ -1,68 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
     tools:context=".MainActivity">
 
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/textview_player_name"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:id="@+id/textview_player_name"/>
+            android:textSize="16sp"
+            android:text="@string/textview_default_playername"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+            />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/textview_player_level"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:id="@+id/textview_player_level"/>
+            android:textSize="15sp"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+            android:text="@string/textview_default_level" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/textview_player_health"
+            android:layout_width="120dp"
+            android:textSize="15sp"
             android:layout_height="wrap_content"
-            android:id="@+id/textview_player_health"/>
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+            android:text="@string/textview_default_health" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:textSize="16sp"
             android:onClick="actionPlayerAttack"
-            android:text="@string/button_attack"/>
+            android:text="@string/button_attack" />
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="actionPlayerHeal"
             android:id="@+id/button_heal"
-            android:text="@string/button_heal"/>
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:onClick="actionPlayerHeal"
+            android:text="@string/button_heal" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/textview_enemy_name"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:id="@+id/textview_enemy_name"/>
+            android:textSize="16sp"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+            android:text="@string/textview_default_enemy" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/textview_enemy_health"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:id="@+id/textview_enemy_health"/>
+            android:textSize="15sp"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+            android:text="@string/textview_default_health" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:textSize="16sp"
             android:onClick="actionEnemyAttack"
-            android:text="@string/button_attack"/>
+            android:text="@string/button_attack" />
 
     </LinearLayout>
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

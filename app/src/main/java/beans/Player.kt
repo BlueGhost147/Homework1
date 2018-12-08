@@ -5,6 +5,20 @@ class Player(
         var level : Int, var experience : Int, var healingPotions : Int
 ) : LivingThing(name, health, attackStrenght, isAlive) {
 
+    override fun attack(target: LivingThing) {
+        if(target.isAlive) {
+            super.attack(target)
+            if(!target.isAlive)
+            {
+                experience += 20
+                if(experience > 100)
+                {
+                    experience -=100
+                    level++
+                }
+            }
+        }
+    }
 
     fun heal()
     {

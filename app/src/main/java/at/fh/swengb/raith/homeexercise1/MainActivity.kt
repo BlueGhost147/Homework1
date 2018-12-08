@@ -1,5 +1,6 @@
 package at.fh.swengb.raith.homeexercise1
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -40,10 +41,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun createEnemy(type: EnemyType): LivingThing {
+
         when (type) {
-            EnemyType.Bear -> return Bear("Tibbers", 1200, 50, true)
-            EnemyType.Dragon -> return Dragon("Smaug", 500, 100, true)
-            EnemyType.Lion -> return Lion("Mufasa", 20, 10, true)
+            EnemyType.Bear -> return Bear(listOf<String>("Pooh","Ted","Freddy Fazbear","Volibear","Tibbers").get(Random().nextInt().absoluteValue % 5), 1200, 50, true)
+            EnemyType.Dragon -> return Dragon(listOf<String>("Smaug","Drogon","Fafnir","Toothless","Spiro").get(Random().nextInt().absoluteValue % 5), 500, 100, true)
+            EnemyType.Lion -> return Lion(listOf<String>("Sarabi","Mufasa","Scar","Simba","Alex").get(Random().nextInt().absoluteValue % 5), 20, 10, true)
             else -> throw Exception()
         }
     }
@@ -105,19 +107,22 @@ class MainActivity : AppCompatActivity() {
         return false
     }
 
+    @SuppressLint("SetTextI18n")
     fun updatePlayerInformation() {
         textview_player_name.text = player.name
-        textview_player_health.text = player.health.toString()
-        textview_player_level.text = player.level.toString()
+        textview_player_health.text = getString(R.string.textview_health) + player.health.toString()
+        textview_player_level.text = getString(R.string.textview_level) + player.level.toString()
     }
 
+    @SuppressLint("SetTextI18n")
     fun updateEnemyInformation() {
         if (enemies.size > 0) {
-            textview_enemy_health.text = enemies[0].health.toString()
-            textview_enemy_name.text = enemies[0].name
+            textview_enemy_health.text = getString(R.string.textview_health) + enemies[0].health.toString()
+            textview_enemy_name.text = getString(R.string.textview_level) + enemies[0].name
         }
     }
 
+    @SuppressLint("SetTextI18n")
     fun updatePotionCount()
     {
         button_heal.setText(getString(R.string.button_heal) + " (${player.healingPotions})")
