@@ -1,3 +1,3 @@
 # Homework1
-Subject: SWENGB
+Subject: SWENGB\n
 Author: raithand17
